@@ -1,4 +1,4 @@
-# Ignore all common build artifacts and temporary files
+# Ignore common build artifacts and temporary files
 *.o
 *.out
 *.log
@@ -24,9 +24,7 @@ Thumbs.db
 !includes/**/*.h
 !sources/**/*.c
 
-# Ignore everything else within includes and sources that isn’t .c or .h
-includes/*/*
-sources/*/*
-!includes/**/*.h
-!sources/**/*.c
+# Allow all contents in sources/libft
+!sources/libft/**
+
 
