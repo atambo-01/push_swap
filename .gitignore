@@ -1,0 +1,32 @@
+# Ignore all common build artifacts and temporary files
+*.o
+*.out
+*.log
+*.tmp
+*.swp
+*.bak
+*~
+.DS_Store
+Thumbs.db
+
+# Ignore everything in the root except specified directories and files
+/*
+!.gitignore
+!includes/
+!sources/
+
+# Track Makefiles anywhere in the repository
+!**/Makefile
+
+# Only allow .c and .h files in includes and sources directories, including subdirectories
+/includes/**/*
+/sources/**/*
+!includes/**/*.h
+!sources/**/*.c
+
+# Ignore everything else within includes and sources that isn’t .c or .h
+includes/*/*
+sources/*/*
+!includes/**/*.h
+!sources/**/*.c
+
