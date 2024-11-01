@@ -60,7 +60,7 @@ void	print_status(t_vars *a);
 t_list	*copy_list(t_list **st_a);
 void	remove_node(t_list **head, t_list *targ);
 t_list	*order_list(t_vars *a);
-int		get_st_quantil(t_vars *a, int qnt, int nth)
+int		get_st_quantil(t_vars *a, int qnt, int nth);
 
 //lesser_sort
 void	sort_2(t_vars *a);
@@ -81,33 +81,44 @@ void	add_top(int value, t_list **head);
 void	add_tail(int value, t_list **head);
 t_list	*get_tail(t_list **head);
 
-//
+//operations_02
 void	rem_top(t_list **head);
 void	swap(t_list **st);
 void	push(t_list **send, t_list **get);
 void	rotate(t_list **head);
 void	r_rotate(t_list **head);
+
+//operations_03
 t_list	*get_max(t_list **st);
 t_list	*get_min(t_list **st);
-t_list	*get_max(t_list **st);
+void	mech_turk(t_vars *a);
 
 //push_swap_utils
 void	print_stacks(t_list **st_a, t_list **st_b);
 int		is_sorted(t_list *head);
-t_list	*get_min(t_list **head);
+
 t_list	*find_in_list(t_list **head, int var);
 
 //short_forms_01
 void	sa(t_vars *a);
 void	sb(t_vars *a);
-void	rr(t_vars *a);
+void	rra(t_vars *a);
 void	ra(t_vars *a);
 void	rb(t_vars *a);
-void	rrr(t_vars *a);
-void	rra(t_vars *a);
+
+//short_forms_02
 void	rrb(t_vars *a);
 void	pa(t_vars *a);
 void	pb(t_vars *a);
+void	rrr(t_vars *a);
+void	rr(t_vars *a);
 
+//sort_6_plus
+t_list	*find_target(t_list *st_a, t_list *st_b);
+void	push_cheap(t_vars *a, int min_cost, int cost_a, int cost_b);
+void	sort_6_plus(t_vars *a);
+
+//sort_b_3
+void	sort_b_3(t_vars *a);
 
 #endif

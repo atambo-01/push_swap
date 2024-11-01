@@ -31,9 +31,7 @@ void	ft_has_duplicates(t_vars *a)
 		while (temp_2)
 		{
 			if (temp_1->data == temp_2->data)
-			{
 				ft_error_ps(a, 4);
-			}
 			temp_2 = temp_2->next;
 		}
 		temp_1 = temp_1->next;

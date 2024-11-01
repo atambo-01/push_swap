@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-void	best_move(t_vars *a, t_list *best, t_list *targ)
+static void	best_move(t_vars *a, t_list *best, t_list *targ)
 {
 	if (best->i != 1 || targ->i != 1)
 	{
@@ -45,7 +45,7 @@ t_list	*find_target(t_list *st_a, t_list *st_b)
 	return (t_2);
 }
 
-int	calculate_cost(t_vars *a, t_list *temp, int *cost_a, int *cost_b)
+static int	calculate_cost(t_vars *a, t_list *temp, int *cost_a, int *cost_b)
 {
 	t_list	*targ;
 
