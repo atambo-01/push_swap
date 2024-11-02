@@ -15,11 +15,11 @@
 #define I_MAX "2147483647"
 #define I_MIN "2147483648"
 
-static int	check_limits(const char *start, int sign)
+static int	check_limits(const char *start, int sign, int len)
 {
-	if (ft_abs(sign) > 10)
+	if (len > 10)
 		return (0);
-	if (ft_abs(sign) == 10)
+	if (len == 10)
 	{
 		if ((sign > 0 && ft_strcmp(start, I_MAX) > 0)
 			|| (sign < 0 && ft_strcmp(start, I_MIN) > 0))
@@ -32,8 +32,10 @@ static int	is_within_int_range(const char *str)
 {
 	const char	*start;
 	int			sign;
+	int			len;
 
 	sign = 1;
+	len = 0;
 	if (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
@@ -47,10 +49,10 @@ static int	is_within_int_range(const char *str)
 	{
 		if (*str < '0' || *str > '9')
 			return (0);
-		sign = sign + (ft_abs(sign) / sign);
+		len++;
 		str++;
 	}
-	return (check_limits(start, sign));
+	return (check_limits(start, sign, len));
 }
 
 void	list_verify(t_vars *a)
@@ -69,7 +71,7 @@ void	list_verify(t_vars *a)
 		while (temp[i][j])
 		{
 			if (!ft_isdigit(temp[i][j]))
-				ft_error_ps(a, 2);
+				ft_error_ps(a, 22);
 			j++;
 		}
 		if (!is_within_int_range(temp[i]))
