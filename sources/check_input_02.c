@@ -12,41 +12,45 @@
 
 #include "../includes/push_swap.h"
 
-static int is_within_int_range(const char *str)
+#define I_MAX "2147483647"
+#define I_MIN "2147483648"
+
+static int	check_limits(const char *start, int sign)
 {
-    const char	*max_int = "2147483647";
-    const char	*min_int = "2147483648";
+	if (ft_abs(sign) > 10)
+		return (0);
+	if (ft_abs(sign) == 10)
+	{
+		if ((sign > 0 && ft_strcmp(start, I_MAX) > 0)
+			|| (sign < 0 && ft_strcmp(start, I_MIN) > 0))
+			return (0);
+	}
+	return (1);
+}
+
+static int	is_within_int_range(const char *str)
+{
 	const char	*start;
-    int 		len;
 	int			sign;
 
-	len = 0;
 	sign = 1;
-    while (*str == ' ')
-        str++;
-    if (*str == '-' || *str == '+')
+	if (*str == '-' || *str == '+')
 	{
-        str++;
-		sign = -1;
+		if (*str == '-')
+			sign = -1;
+		str++;
 	}
-    while (*str == '0')
-        str++;
-    start = str;
-    while (*str)
+	while (*str == '0')
+		str++;
+	start = str;
+	while (*str)
 	{
-        if (*str < '0' || *str > '9')
-            return 0;
-        len++;
-        str++;
-    }
-    if (len => 0)
-        return 0;
-    if (len == 10)
-	{
-        if (ft_strcmp(start, max_int) > 0 || ft_strcmp(start, min_int) > 0)
-            return 0;
-    }
-    return (1);
+		if (*str < '0' || *str > '9')
+			return (0);
+		sign = sign + (ft_abs(sign) / sign);
+		str++;
+	}
+	return (check_limits(start, sign));
 }
 
 void	list_verify(t_vars *a)
