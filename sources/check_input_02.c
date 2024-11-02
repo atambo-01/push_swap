@@ -12,17 +12,19 @@
 
 #include "../includes/push_swap.h"
 
-#define I_MAX "2147483647"
-#define I_MIN "2147483648"
-
 static int	check_limits(const char *start, int sign, int len)
 {
+	const char	*i_max;
+	const char	*i_min;
+
+	i_max = "2147483647";
+	i_min = "2147483648";
 	if (len > 10)
 		return (0);
 	if (len == 10)
 	{
-		if ((sign > 0 && ft_strcmp(start, I_MAX) > 0)
-			|| (sign < 0 && ft_strcmp(start, I_MIN) > 0))
+		if ((sign > 0 && ft_strcmp(start, i_max) > 0)
+			|| (sign < 0 && ft_strcmp(start, i_min) > 0))
 			return (0);
 	}
 	return (1);

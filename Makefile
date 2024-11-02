@@ -15,6 +15,7 @@ SOURCES         =	./sources/check_input_01.c \
 					./sources/ft_atoi_ps.c \
 					./sources/ft_split_ps.c \
 					./sources/higher_sort.c \
+					./sources/init_free.c \
 					./sources/lesser_sort.c \
 					./sources/list_utils.c \
 					./sources/main.c \

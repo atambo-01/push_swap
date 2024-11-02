@@ -19,14 +19,18 @@ void	print_status(t_vars *a)
 		ft_printf("move_count = %d\n", a->moves);
 		ft_printf("t_a size = %d\n", list_size(a->st_a));
 		print_stacks(&(a->st_a), &(a->st_b));
-		if (a->time > 0)
-		{
-			usleep(a->time);
-			system("clear");
-		}
 	}
 	return ;
 }
+
+//uncomment and add to print_status at bottom to enable visualizing
+/*
+if (a->time > 0)
+{
+usleep(a->time);
+system("clear");
+}
+*/
 
 t_list	*copy_list(t_list **st_a)
 {

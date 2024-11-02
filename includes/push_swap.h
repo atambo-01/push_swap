@@ -24,7 +24,7 @@ typedef struct s_list
 	int				data;
 	int				i;
 	struct s_list	*next;
-}t_list;
+}	t_list;
 
 typedef struct s_vars
 {
@@ -45,6 +45,7 @@ void	ft_error_ps(t_vars *a, int e);
 void	ft_has_duplicates(t_vars *a);
 t_list	*av_to_list(char **av, t_vars *a);
 void	ft_check_one_dig(char **av, t_vars *a);
+void	checks(t_vars *a, char **av);
 
 //check_inputs_02
 void	list_verify(t_vars *a);
@@ -61,6 +62,11 @@ t_list	*copy_list(t_list **st_a);
 void	remove_node(t_list **head, t_list *targ);
 t_list	*order_list(t_vars *a);
 int		get_st_quantil(t_vars *a, int qnt, int nth);
+
+//init_&_free
+t_vars	*init_all(t_vars *a);
+void	free_matrix(char **mat);
+void	free_all(t_vars *a);
 
 //lesser_sort
 void	sort_2(t_vars *a);

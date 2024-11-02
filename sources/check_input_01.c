@@ -14,7 +14,7 @@
 
 void	ft_error_ps(t_vars *a, int e)
 {
-	ft_printf("Error\n");
+	ft_putstr_fd("Error\n", 2);
 	free_all(a);
 	exit(e);
 }
@@ -84,4 +84,16 @@ void	ft_check_one_dig(char **av, t_vars *a)
 			ft_error_ps(a, 3);
 		i++;
 	}
+}
+
+void	checks(t_vars *a, char **av)
+{
+	ft_check_one_dig(&av[1], a);
+	a->in = ft_split_ps(&av[1], ' ');
+	ft_check_one_dig(a->in, a);
+	list_verify(a);
+	a->st_a = av_to_list(a->in, a);
+	ft_has_duplicates(a);
+	a->ord = order_list(a);
+	return ;
 }
